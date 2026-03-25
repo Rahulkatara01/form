@@ -1,10 +1,9 @@
-<html>
-<head>
+<<head>
 <title>Welcome My Website</title>
 
 <style>
   body {
-    background-color: pink; 
+    background: linear-gradient(to right, pink, lightblue);
     font-family: Arial;
   }
 
@@ -21,8 +20,29 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px gray;
   }
-</style>
 
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  input:focus {
+    border-color: blue;
+    outline: none;
+  }
+
+  input[type="submit"] {
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: green;
+  }
+</style> 
 <script>
 function validateForm(event) {
   let password = document.forms["myForm"]["password"].value;
@@ -44,22 +64,21 @@ function validateForm(event) {
 
 <body>
 
-<h1>Welcome To </h1>
+<h1>Welcome To My Website</h1>
 
 <form name="myForm" onsubmit="validateForm(event)" action="submit.php" method="POST">
   <label>Name:</label><br>
-  <input type="text" name="name"><br><br>
+<input type="text" name="name" placeholder="Enter your name" required><br><br>
 
-  <label>Email:</label><br>
-  <input type="email" name="email"><br><br>
+<label>Email:</label><br>
+<input type="email" name="email" placeholder="Enter your email" required><br><br>
 
   <label>Contact:</label><br> 
-  <input type="Number" name="Contact"><br><br>
+<input type="number" name="Contact" placeholder="Enter your number" required><br><br>
 
   <label>Password:</label><br>
-  <input type="password" name="password"><br><br>
-
-  <input type="submit" value="Submit">
+  <input type="password" name="password" placeholder="Enter password" required><br><br>
+   <input type="submit" value="Submit">
 </form>
 
 </body>
